@@ -1,5 +1,4 @@
 <?php
-//For detail about Fiboonacci using dynamic programming. can visit --> https://www.geeksforgeeks.org/dynamic-programming-set-1/
 /* Recursive version of Fibonacci */
 function fib($n){
   if($n == 0 || $n == 1)
@@ -16,7 +15,7 @@ $ar[1]=1;
 function fibMemoization($n,$lookup){
 
   if(!isset($lookup[$n])){
-     $lookup[$n]=fib($n-1,$lookup)+fib($n-2,$lookup);
+     $lookup[$n]=fibMemoization($n-1,$lookup)+fibMemoization($n-2,$lookup);
     }
  return $lookup[$n];
 }
@@ -34,5 +33,5 @@ function fibTabulation($n)
 }
 echo fibTabulation(7);
 
-
+//For detail about Fiboonacci. can visit --> https://www.geeksforgeeks.org/dynamic-programming-set-1/
  ?>
